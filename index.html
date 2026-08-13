@@ -324,7 +324,7 @@
     </div>
     <header>
         <h1>🎤 Le Quiz </h1>
-        <p class="subtitle">Testez vos connaissances sur les années 60-80, le Périgord et le cinéma populaire.</p>
+        <p class="subtitle">Testez vos connaissances sur les années 60-80, le Périgord et le cinéma populaire, dans oublier le fameux quiz "Pas si évident"</p>
     </header>
 
     <div class="container">
@@ -341,6 +341,11 @@
                 <h3>🎬 Cinéma</h3>
                 <p>Films populaires</p>
             </div>
+ <div class="theme-card" onclick="selectTheme('pas_si_evident')">
+                <h3>🤯 Pas si évident</h3>
+                <p>Attention aux pièges</p>
+            </div>
+        </div>
         </div>
 
         <div class="quiz-container" id="quizContainer" style="display: none;">
@@ -418,7 +423,29 @@
                 { question: "Quel est ce film célèbre de 1966, qui se termine par un 'duel' à trois ?", options: ["'Le Bon, la Brute et le Truand'", "'Il était une fois dans l'Ouest'", "'La Mort aux trousses'", "'Ben-Hur'"], correct: 0 },
                 { question: "Quel acteur incarne Fantômas dans les années 60 ?", options: ["Louis de Funès", "Jean Marais", "Bourvil", "Yves Montand"], correct: 1 },
                 { question: "Qui accompagne Pierre Richard dans 'la Chèvre' en 1981 ?", options: ["Victor Lanoux", "Jean-François Balmer", "Jean-Pierre Castaldi", "Gérad Depardieu"], correct: 3 }
-            ]
+            ],
+
+pas_si_evident: [
+{ question: "Quel pays possède le plus grand nombre de fuseaux horaires ?", options: ["La Russie", "Les États-Unis", "La France", "La Chine"], correct: 2 },
+
+{ question: "Lequel de ces aliments peut se conserver naturellement pendant des années sans vraiment se périmer ?", options: ["Le miel", "Le riz", "Le chocolat", "Le fromage"], correct: 0 },
+
+{ question: "Quel est le plus grand organe du corps humain ?", options: ["Le foie", "La peau", "L’intestin grêle", "Le cerveau"], correct: 1 },
+
+{ question: "Parmi ces trois pays, lequel n’a jamais remporté la Coupe du monde de football ?", options: ["L’Angleterre", "L’Espagne", "Les Pays-Bas", "L’Allemagne"], correct: 2 },
+
+{ question: "Quel animal possède trois cœurs ?", options: ["Le poulpe", "Le requin", "L’hippocampe", "Le dauphin"], correct: 0 },
+
+{ question: "Quelle planète tourne sur elle-même dans le sens opposé à celui de la plupart des autres planètes ?", options: ["Mars", "Vénus", "Neptune", "Jupiter"], correct: 1 },
+
+{ question: "Lequel de ces objets a été inventé en premier ?", options: ["Le téléphone", "Le réfrigérateur électrique", "La fermeture éclair", "Le lave-linge"], correct: 0 },
+
+{ question: "Quel pays consomme traditionnellement le plus de chocolat par habitant ?", options: ["La Belgique", "La Suisse", "La France", "L’Allemagne"], correct: 1 },
+
+{ question: "Que mesure réellement l’échelle de Richter ?", options: ["La puissance des dégâts d’un séisme", "La magnitude d’un séisme", "La durée d’un séisme", "La profondeur d’un séisme"], correct: 1 },
+
+{ question: "Parmi ces trois villes, laquelle est située le plus au nord ?", options: ["Paris", "Montréal", "Rome", "Madrid"], correct: 1 }
+]
         };
 
         let currentTheme = null;
