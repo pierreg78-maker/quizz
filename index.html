@@ -561,7 +561,7 @@
             const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
             
             navigator.clipboard.writeText(promptText).then(() => {
-                alert("Le prompt a été copié dans votre presse-papier ! Vous allez être redirigé vers Gemini. Il vous suffira de faire un clic droit ou Ctrl+V pour le coller.");
+                alert("Le prompt a été copié dans votre presse-papier ! Vous allez être redirigé vers Gemini. Il vous suffira de coller le prompt et de l'envoyer");
                 window.open("https://gemini.google.com/app", '_blank');
             }).catch(err => {
                 console.error("Erreur lors de la copie : ", err);
