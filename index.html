@@ -551,9 +551,26 @@
             document.getElementById('quizModal').style.display = 'none';
         }
 
-        function lancerCreationQuiz() {
+                function lancerCreationQuiz() {
             const themeInput = document.getElementById('customThemeInput').value.trim();
             const themeValue = themeInput ? themeInput : "un thème libre";
+            
+            // Le prompt détaillé que vous avez demandé
+            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
+            
+            // Copie dans le presse-papier
+            navigator.clipboard.writeText(promptText).then(() => {
+                alert("Le prompt a été copié ! Vous allez être redirigé vers Gemini. Il vous suffira de le coller (Ctrl+V) dans la zone de texte.");
+                // Ouvre Gemini
+                window.open("https://gemini.google.com/app", '_blank');
+            }).catch(err => {
+                console.error("Erreur lors de la copie : ", err);
+                alert("Impossible de copier le texte automatiquement. Voici le prompt à copier : \n\n" + promptText);
+            });
+            
+            fermerModalQuiz();
+        }
+
             
             // Prompt amélioré demandé
             const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
