@@ -414,7 +414,7 @@
             <!-- Nouvelle carte Créer un quiz -->
             <div class="theme-card" onclick="ouvrirModalQuiz()">
                 <h3>✨ Créer un quiz</h3>
-                <p>Générez votre propre quiz sur mesure avec Gemini</p>
+                <p>Générez votre propre quiz sur mesure avec une IA</p>
                 <button class="card-action-btn">Générer 🚀</button>
             </div>
         </div>
@@ -502,7 +502,7 @@
                 { question: "Quel acteur français est l'as des as ?", options: ["Gérard Depardieu", "Alain Delon", "Louis de Funès", "Jean-Paul Belmondo"], correct: 3 },
                 { question: "Qui est 'Le cinquième élément' dans le film éponyme ?", options: ["Korben Dallas - Bruce Willis", "Leeloo - Milla Jovovich", "Zorg - Gary Oldman", "Père Vito Cornélius - Ian Holm"], correct: 1 },
                 { question: "Quel est le nom du personnage joué par Coluche dans 'L'Aile ou la Cuisse' ?", options: ["Jacques Tricatel", "Charles Duchemin", "Gérard Duchemin", "Fernand Naudin"], correct: 2 },
-                { question: "Dans 'la Bête humaine' de Renoir, Jean Gabin fredonne souvent une mélodie. Laquelle ?", options: ["'Gare au gorille'", "'La vie en rose'", "'Les copains d'abord'", "'Le p'tit cœur de Ninon'"], correct: 3 },
+                { question: "Quel réalisateur américain a dirigé les films E.T. l'extra-terrestre, Jurassic Park et Les Dents de la mer ?", options: ["Christopher Nolan", "James Cameron", "Steven Spielberg", "George Lucas"], correct: 2 },
                 { question: "Quel est ce film célèbre de 1966, qui se termine par un 'duel' à trois ?", options: ["'Le Bon, la Brute et le Truand'", "'Il était une fois dans l'Ouest'", "'La Mort aux trousses'", "'Ben-Hur'"], correct: 0 },
                 { question: "Quel acteur incarne Fantômas dans les années 60 ?", options: ["Louis de Funès", "Jean Marais", "Bourvil", "Yves Montand"], correct: 1 },
                 { question: "Qui accompagne Pierre Richard dans 'la Chèvre' en 1981 ?", options: ["Victor Lanoux", "Jean-François Balmer", "Jean-Pierre Castaldi", "Gérard Depardieu"], correct: 3 }
@@ -558,10 +558,10 @@
             const themeInput = document.getElementById('customThemeInput').value.trim();
             const themeValue = themeInput ? themeInput : "un thème libre";
             
-            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Niveau 4ème ou 3ème et seconde. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
+            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Points importants: 1. Une bonne réponse parmi 4 possibilités. 2. Niveau 4ème, 3ème ou seconde. 3. Un indice à découvrir si on le souhaite. 4. Une petite explication sur la bonne réponse et les autres réponses. 5. À la fin, un décompte des points, avec les points forts et les points faibles.`;
             
             navigator.clipboard.writeText(promptText).then(() => {
-                alert("Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée ! Vous allez être redirigé vers Gemini. ");
+                alert("Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée ! Par défaut, vous allez être redirigé vers Gemini. ");
                 window.open("https://gemini.google.com/app", '_blank');
             }).catch(err => {
                 console.error("Erreur lors de la copie : ", err);
