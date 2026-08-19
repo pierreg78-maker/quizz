@@ -558,10 +558,10 @@
             const themeInput = document.getElementById('customThemeInput').value.trim();
             const themeValue = themeInput ? themeInput : "un thème libre";
             
-            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
+            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Une bonne réponse parmi 4 possibilités. Niveau 4ème ou 3ème et seconde. Un indice à découvrir si on le souhaite. Une petite explication sur la bonne réponse et les autres réponses. À la fin, un décompte des points, avec les points forts et les points faibles.`;
             
             navigator.clipboard.writeText(promptText).then(() => {
-                alert("Le prompt a été copié dans votre presse-papier ! Vous allez être redirigé vers Gemini. Il vous suffira de coller le prompt et de l'envoyer");
+                alert("Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée ! Vous allez être redirigé vers Gemini. ");
                 window.open("https://gemini.google.com/app", '_blank');
             }).catch(err => {
                 console.error("Erreur lors de la copie : ", err);
