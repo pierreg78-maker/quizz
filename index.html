@@ -542,29 +542,44 @@
             document.getElementById('quizModal').style.display = 'none';
         }
         function lancerCreationQuiz() {
-            const themeInput = document.getElementById('customThemeInput').value.trim();
-            const themeValue = themeInput ? themeInput : "un thème libre";
-            
-            const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Points importants: 1. Une bonne réponse parmi 4 possibilités. 2. Niveau 4ème, 3ème ou seconde. 3. Un indice à découvrir si on le souhaite. 4. Une petite explication sur la bonne réponse et les autres réponses. 5. À la fin, un décompte des points, avec les points forts et les points faibles.`;
-            
-            navigator.clipboard.writeText(promptText).then(() => {
-                showCustomAlert("Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée !<br>Par défaut, vous allez être redirigé vers Gemini.");
-                window.open("https://gemini.google.com/app", '_blank');
-            }).catch(err => {
-                console.error("Erreur lors de la copie : ", err);
-                showCustomAlert("Voici votre prompt à copier manuellement :<br><br>" + promptText);
-                window.open("https://gemini.google.com/app", '_blank');
-            });
-            
-            fermerModalQuiz();
-        }
-        function showCustomAlert(message) {
-            document.getElementById('customAlertMessage').innerHTML = message;
-            document.getElementById('customAlert').style.display = 'flex';
-        }
-        function fermerCustomAlert() {
-            document.getElementById('customAlert').style.display = 'none';
-        }
+    const themeInput = document.getElementById('customThemeInput').value.trim();
+    const themeValue = themeInput ? themeInput : "un thème libre";
+    
+    const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Points importants: 1. Une bonne réponse parmi 4 possibilités. 2. Niveau 4ème, 3ème ou seconde. 3. Un indice à découvrir si on le souhaite. 4. Une petite explication sur la bonne réponse et les autres réponses. 5. À la fin, un décompte des points, avec les points forts et les points faibles.`;
+    
+    navigator.clipboard.writeText(promptText).then(() => {
+        showCustomAlert(
+            "Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée !<br>Par défaut, vous allez être redirigé vers Gemini.",
+            () => window.open("https://gemini.google.com/app", '_blank')
+        );
+    }).catch(err => {
+        console.error("Erreur lors de la copie : ", err);
+        showCustomAlert(
+            "Voici votre prompt à copier manuellement :<br><br>" + promptText,
+            () => window.open("https://gemini.google.com/app", '_blank')
+        );
+    });
+    
+    fermerModalQuiz();
+}
+
+function showCustomAlert(message, onOk) {
+    document.getElementById('customAlertMessage').innerHTML = message;
+    document.getElementById('customAlert').style.display = 'flex';
+    
+    // On stocke la fonction à exécuter au clic sur OK
+    window._customAlertCallback = onOk || null;
+}
+
+function fermerCustomAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+    
+    // On exécute le callback (ouverture de Gemini) seulement maintenant
+    if (typeof window._customAlertCallback === 'function') {
+        window._customAlertCallback();
+        window._customAlertCallback = null;
+    }
+}
         function displayQuestion() {
             answerSubmitted = false;
             selectedOption = null;
