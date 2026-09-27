@@ -545,7 +545,7 @@
     const themeInput = document.getElementById('customThemeInput').value.trim();
     const themeValue = themeInput ? themeInput : "un thème libre";
     
-    const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Points importants: 1. Une bonne réponse parmi 4 possibilités. 2. Niveau 4ème, 3ème ou seconde. 3. Un indice à découvrir si on le souhaite. 4. Une petite explication sur la bonne réponse et les autres réponses. 5. À la fin, un décompte des points, avec les points forts et les points faibles.`;
+    const promptText = `Génère un quiz de 10 questions sur ${themeValue}. Points importants: préliminaire: on doit pouvoir ouvrir le quiz directement, ne pas proposer de code à copier-coller. 1. Une bonne réponse parmi 4 possibilités. 2. Niveau 4ème, 3ème ou seconde. 3. Un indice à découvrir si on le souhaite. 4. Une petite explication sur la bonne réponse et les autres réponses. 5. À la fin, un décompte des points, avec les points forts et les points faibles.`;
     
     navigator.clipboard.writeText(promptText).then(() => {
         showCustomAlert(
