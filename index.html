@@ -386,10 +386,50 @@
     </div>
     <header>
         <h1>🎤 Le Quiz </h1>
-        <p class="subtitle">Testez vos connaissances sur la musique, le Périgord ou le cinéma, sans oublier le fameux quiz "Pas si évident"</p>
+        <p class="subtitle">Testez vos connaissances : Histoire, Géographie, Animaux, Villes, Capitales, Records... et bien plus !</p>
     </header>
     <div class="container">
         <div class="theme-selector" id="themeSelector">
+            <div class="theme-card" onclick="selectTheme('histoire_france_1')">
+                <h3>🏰 Histoire de France 1</h3>
+                <p>Des Gaulois à Napoléon</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('histoire_france_2')">
+                <h3>📜 Histoire de France 2</h3>
+                <p>Révolutions et République</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('histoire_europe')">
+                <h3>🇪🇺 Histoire de l'Europe</h3>
+                <p>Empires et unions</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('villes_francaises')">
+                <h3>🏙️ Villes françaises</h3>
+                <p>Capitale et régions</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('geographie')">
+                <h3>🌍 Géographie</h3>
+                <p>Fleuve, montagnes, mers</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('animaux_1')">
+                <h3>🦁 Animaux 1</h3>
+                <p>Les plus connus</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('animaux_2')">
+                <h3>🐘 Animaux 2</h3>
+                <p>Curiosités du règne animal</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('plantes')">
+                <h3>🌿 Plantes</h3>
+                <p>Arbres, fleurs et cultures</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('records')">
+                <h3>🏆 Records</h3>
+                <p>Records du monde</p>
+            </div>
+            <div class="theme-card" onclick="selectTheme('capitales')">
+                <h3>🏛️ Capitales</h3>
+                <p>Du monde entier</p>
+            </div>
             <div class="theme-card" onclick="selectTheme('musique')">
                 <h3>🎵 Musique</h3>
                 <p>Années 60-70-80</p>
@@ -465,6 +505,126 @@
 
     <script>
         const quizzes = {
+            histoire_france_1: [
+                { question: "Quel roi est associé à la formule « L’État, c’est moi » ?", options: ["Louis XV", "Henri IV", "Louis XIV", "François Ier"], correct: 2, explanation: "Louis XIV, le Roi-Soleil, symbolise l'absolutisme monarchique avec cette formule." },
+                { question: "En quelle année débute la Révolution française ?", options: ["1788", "1792", "1789", "1815"], correct: 2, explanation: "La prise de la Bastille le 14 juillet 1789 marque le début de la Révolution française." },
+                { question: "Qui était le principal ministre de Louis XIII ?", options: ["Colbert", "Mazarin", "Richelieu", "Sully"], correct: 2, explanation: "Le cardinal de Richelieu fut le principal ministre de Louis XIII et renforça le pouvoir royal." },
+                { question: "Quel événement a lieu le 18 juin 1940 ?", options: ["Signature de l’armistice", "Libération de Paris", "Appel du général de Gaulle", "Débarquement de Normandie"], correct: 2, explanation: "Le 18 juin 1940, le général de Gaulle lance son appel depuis Londres pour continuer le combat." },
+                { question: "Qui est le premier empereur des Français ?", options: ["Napoléon Bonaparte", "Napoléon III", "Louis-Philippe", "Charlemagne"], correct: 0, explanation: "Napoléon Bonaparte se fait sacrer empereur des Français en 1804." },
+                { question: "Quelle bataille marque la défaite définitive de Napoléon en 1815 ?", options: ["Austerlitz", "Waterloo", "Leipzig", "Wagram"], correct: 1, explanation: "La bataille de Waterloo le 18 juin 1815 met fin à l'épopée napoléonienne." },
+                { question: "De quel peuple gaulois Vercingétorix était-il le chef ?", options: ["Arvernes", "Éduens", "Parisii", "Bituriges"], correct: 0, explanation: "Vercingétorix était le chef des Arvernes et a mené la résistance contre Jules César." },
+                { question: "En quelle année Charlemagne est-il sacré empereur ?", options: ["750", "800", "843", "987"], correct: 1, explanation: "Charlemagne est sacré empereur le 25 décembre 800 par le pape Léon III." },
+                { question: "Quel traité met fin à la Première Guerre mondiale ?", options: ["Traité de Tordesillas", "Traité d'Utrecht", "Traité de Versailles", "Traité de Westphalie"], correct: 2, explanation: "Le traité de Versailles de 1919 officialise la fin de la Première Guerre mondiale." },
+                { question: "Qui a dit « Paris vaut bien une messe » ?", options: ["Louis XIV", "Henri IV", "Louis XVI", "François Ier"], correct: 1, explanation: "Henri IV se convertit au catholicisme pour devenir roi de France." }
+            ],
+            histoire_france_2: [
+                { question: "Quelle dynastie succède aux Mérovingiens ?", options: ["Capétiens", "Carolingiens", "Valois", "Bourbons"], correct: 1, explanation: "Les Carolingiens succèdent aux Mérovingiens à partir de Pépin le Bref." },
+                { question: "En quelle année la France passe-t-elle à la Cinquième République ?", options: ["1946", "1958", "1968", "1981"], correct: 1, explanation: "La Constitution de la Ve République est adoptée en 1958 sous Charles de Gaulle." },
+                { question: "Qui a promulgué les lois sur l'école gratuite, laïque et obligatoire ?", options: ["Jules Ferry", "Jean Jaurès", "Léon Gambetta", "Adolphe Thiers"], correct: 0, explanation: "Les lois Ferry de 1881-1882 rendent l'école primaire gratuite, laïque et obligatoire." },
+                { question: "Quel est le nom de code du débarquement en Normandie ?", options: ["Overlord", "Neptune", "Market Garden", "Anvil"], correct: 0, explanation: "L'opération Overlord est le nom de code du débarquement allié en Normandie le 6 juin 1944." },
+                { question: "Qui a été le premier président de la Ve République ?", options: ["Charles de Gaulle", "Georges Pompidou", "François Mitterrand", "René Coty"], correct: 0, explanation: "Charles de Gaulle est élu premier président de la Ve République en 1958." },
+                { question: "En quelle année a eu lieu la bataille de Verdun ?", options: ["1914", "1916", "1918", "1940"], correct: 1, explanation: "La bataille de Verdun se déroule de février à décembre 1916, l'une des plus meurtrières de la Première Guerre mondiale." },
+                { question: "Quel roi a fait construire principalement le château de Versailles ?", options: ["Louis XIII", "Louis XIV", "Louis XV", "François Ier"], correct: 1, explanation: "Louis XIV transforme le pavillon de chasse de Versailles en résidence royale grandiose." },
+                { question: "Quel événement a lieu le 4 août 1789 ?", options: ["Prise de la Bastille", "Abolition des privilèges", "Exécution de Louis XVI", "Serment du Jeu de Paume"], correct: 1, explanation: "Dans la nuit du 4 août 1789, l'Assemblée constituante abolit les privilèges féodaux." },
+                { question: "Qui a dirigé les Forces françaises libres pendant la Seconde Guerre mondiale ?", options: ["Philippe Leclerc", "Jean de Lattre de Tassigny", "Charles de Gaulle", "Henri Giraud"], correct: 2, explanation: "Charles de Gaulle dirige les Forces françaises libres depuis Londres." },
+                { question: "En quelle année Napoléon devient-il empereur ?", options: ["1799", "1802", "1804", "1812"], correct: 2, explanation: "Napoléon se fait couronner empereur le 2 décembre 1804." }
+            ],
+            histoire_europe: [
+                { question: "Quel traité a créé la Communauté économique européenne (CEE) ?", options: ["Traité de Rome", "Traité de Maastricht", "Traité de Lisbonne", "Accords de Schengen"], correct: 0, explanation: "Le traité de Rome de 1957 crée la CEE, ancêtre de l'Union européenne." },
+                { question: "Qui a été le premier empereur romain ?", options: ["Jules César", "Auguste", "Néron", "Trajan"], correct: 1, explanation: "Octave, sous le nom d'Auguste, devient le premier empereur romain en 27 av. J.-C." },
+                { question: "En quelle année a eu lieu la chute du mur de Berlin ?", options: ["1985", "1989", "1991", "1993"], correct: 1, explanation: "Le mur de Berlin tombe le 9 novembre 1989, symbole de la fin de la Guerre froide." },
+                { question: "Quel pays n'a pas fait partie des six fondateurs de la CEE ?", options: ["France", "Allemagne", "Royaume-Uni", "Italie"], correct: 2, explanation: "Les fondateurs sont France, Allemagne, Italie, Belgique, Pays-Bas et Luxembourg. Le Royaume-Uni rejoint plus tard." },
+                { question: "Qui a écrit « De l'esprit des lois » ?", options: ["Montesquieu", "Rousseau", "Voltaire", "Diderot"], correct: 0, explanation: "Montesquieu publie De l'esprit des lois en 1748, œuvre fondatrice de la séparation des pouvoirs." },
+                { question: "Quel est le nom de l'opération allemande contre l'URSS en 1941 ?", options: ["Barbarossa", "Overlord", "Fall Gelb", "Sea Lion"], correct: 0, explanation: "L'opération Barbarossa est l'invasion de l'Union soviétique par l'Allemagne nazie le 22 juin 1941." },
+                { question: "Quel fleuve traverse Vienne, Budapest et Belgrade ?", options: ["Danube", "Rhin", "Elbe", "Volga"], correct: 0, explanation: "Le Danube est le deuxième plus long fleuve d'Europe et traverse plusieurs capitales." },
+                { question: "En quelle année a eu lieu la Révolution russe ?", options: ["1905", "1917", "1921", "1939"], correct: 1, explanation: "Les révolutions de février et octobre 1917 renversent le régime tsariste et mènent aux bolcheviks." },
+                { question: "Quel pays a quitté l'Union européenne en 2020 ?", options: ["Norvège", "Suisse", "Royaume-Uni", "Islande"], correct: 2, explanation: "Le Brexit entre en vigueur le 31 janvier 2020." },
+                { question: "Qui a peint « La Joconde » ?", options: ["Michel-Ange", "Raphaël", "Léonard de Vinci", "Botticelli"], correct: 2, explanation: "Léonard de Vinci peint la Joconde (Mona Lisa) au début du XVIe siècle." }
+            ],
+            villes_francaises: [
+                { question: "Quelle est la capitale de la région Occitanie ?", options: ["Montpellier", "Toulouse", "Bordeaux", "Marseille"], correct: 1, explanation: "Toulouse est la préfecture de la région Occitanie." },
+                { question: "Dans quelle ville se trouve la basilique Notre-Dame de Fourvière ?", options: ["Lyon", "Marseille", "Bordeaux", "Nice"], correct: 0, explanation: "La basilique de Fourvière domine Lyon et offre une vue panoramique sur la ville." },
+                { question: "Quelle ville est surnommée « la cité des Ducs » ?", options: ["Dijon", "Nantes", "Lille", "Strasbourg"], correct: 0, explanation: "Dijon, ancienne capitale du duché de Bourgogne, est connue comme la cité des Ducs." },
+                { question: "Quel est le plus grand port de France ?", options: ["Marseille", "Le Havre", "Dunkerque", "Bordeaux"], correct: 0, explanation: "Le Grand Port Maritime de Marseille est le premier port français." },
+                { question: "Dans quelle ville a lieu le Festival de Cannes ?", options: ["Nice", "Cannes", "Monaco", "Saint-Tropez"], correct: 1, explanation: "Le Festival international du film se tient chaque année à Cannes." },
+                { question: "Quelle ville française est célèbre pour son carnaval ?", options: ["Nice", "Toulouse", "Lyon", "Bordeaux"], correct: 0, explanation: "Le Carnaval de Nice est l'un des plus grands et des plus anciens de France." },
+                { question: "Dans quelle région se trouve le Mont-Saint-Michel ?", options: ["Normandie", "Bretagne", "Pays de la Loire", "Centre-Val de Loire"], correct: 0, explanation: "Le Mont-Saint-Michel est situé en Normandie, à la frontière avec la Bretagne." },
+                { question: "Quelle est la deuxième ville de France par population ?", options: ["Lyon", "Marseille", "Toulouse", "Lille"], correct: 1, explanation: "Marseille est la deuxième ville la plus peuplée de France après Paris." },
+                { question: "Dans quelle ville se trouve le siège du Parlement européen ?", options: ["Strasbourg", "Bruxelles", "Luxembourg", "Paris"], correct: 0, explanation: "Le Parlement européen siège à Strasbourg (sessions plénières), Bruxelles et Luxembourg." },
+                { question: "Quelle est la capitale de la Corse ?", options: ["Ajaccio", "Bastia", "Corte", "Calvi"], correct: 0, explanation: "Ajaccio est la préfecture de la Corse et la ville natale de Napoléon." }
+            ],
+            geographie: [
+                { question: "Quel est le plus long fleuve de France ?", options: ["Loire", "Seine", "Rhône", "Garonne"], correct: 0, explanation: "La Loire est le plus long fleuve de France avec environ 1 006 km." },
+                { question: "Quelle est la plus haute montagne de France ?", options: ["Mont Blanc", "Mont Ventoux", "Pic du Midi", "Aiguille du Midi"], correct: 0, explanation: "Le Mont Blanc culmine à 4 808 m et est le plus haut sommet d'Europe occidentale." },
+                { question: "Quel océan borde la côte ouest de la France métropolitaine ?", options: ["Atlantique", "Méditerranée", "Manche", "Mer du Nord"], correct: 0, explanation: "L'océan Atlantique borde toute la côte ouest de la France." },
+                { question: "Quel est le plus grand département français ?", options: ["Guyane", "Finistère", "Gironde", "Dordogne"], correct: 0, explanation: "La Guyane, en Amérique du Sud, est le plus grand département français." },
+                { question: "Dans quel océan se trouve l'île de la Réunion ?", options: ["Atlantique", "Indien", "Pacifique", "Arctique"], correct: 1, explanation: "La Réunion est une île de l'océan Indien, département français d'outre-mer." },
+                { question: "Quel fleuve se jette dans la mer Méditerranée ?", options: ["Rhône", "Loire", "Seine", "Garonne"], correct: 0, explanation: "Le Rhône se jette dans la Méditerranée près de Marseille." },
+                { question: "Quelle est la capitale de la région Nouvelle-Aquitaine ?", options: ["Bordeaux", "Toulouse", "Limoges", "Poitiers"], correct: 0, explanation: "Bordeaux est la préfecture de la région Nouvelle-Aquitaine." },
+                { question: "Quel massif montagneux sépare la France de l'Espagne ?", options: ["Alpes", "Pyrénées", "Jura", "Vosges"], correct: 1, explanation: "Les Pyrénées forment une frontière naturelle entre la France et l'Espagne." },
+                { question: "Quelle est la plus grande île de France métropolitaine ?", options: ["Corse", "Belle-Île", "Oléron", "Ré"], correct: 0, explanation: "La Corse est la plus grande île de France métropolitaine." },
+                { question: "Dans quelle mer se jette la Seine ?", options: ["Manche", "Méditerranée", "Atlantique", "Mer du Nord"], correct: 0, explanation: "La Seine se jette dans la Manche au Havre." }
+            ],
+            animaux_1: [
+                { question: "Quel animal est le plus rapide sur terre ?", options: ["Guépard", "Lion", "Gazelle", "Lièvre"], correct: 0, explanation: "Le guépard peut atteindre des vitesses de plus de 100 km/h sur de courtes distances." },
+                { question: "Quel mammifère pond des œufs ?", options: ["Ornithorynque", "Chauve-souris", "Dauphin", "Éléphant"], correct: 0, explanation: "L'ornithorynque est un monotrème, l'un des rares mammifères ovipares." },
+                { question: "Combien de cœurs possède un poulpe ?", options: ["1", "2", "3", "4"], correct: 2, explanation: "Le poulpe a trois cœurs : deux pour les branchies et un pour le corps." },
+                { question: "Quel animal est le plus grand du monde ?", options: ["Éléphant d'Afrique", "Baleine bleue", "Girafe", "Requin-baleine"], correct: 1, explanation: "La baleine bleue est le plus grand animal ayant jamais existé sur Terre." },
+                { question: "Quel oiseau est incapable de voler ?", options: ["Autruche", "Aigle", "Manchot", "Colibri"], correct: 0, explanation: "L'autruche est le plus grand oiseau et ne vole pas, comme le manchot." },
+                { question: "Quel animal change de couleur pour se camoufler ?", options: ["Caméléon", "Lézard", "Serpent", "Crocodile"], correct: 0, explanation: "Le caméléon change de couleur grâce à des cellules spécialisées appelées chromatophores." },
+                { question: "Quel est l'animal emblématique de l'Australie ?", options: ["Kangourou", "Koala", "Émeu", "Wombat"], correct: 0, explanation: "Le kangourou est l'un des symboles les plus connus de l'Australie." },
+                { question: "Quel mammifère marin est réputé pour son intelligence ?", options: ["Dauphin", "Baleine", "Phoque", "Morse"], correct: 0, explanation: "Les dauphins sont parmi les animaux les plus intelligents, avec un cerveau complexe." },
+                { question: "Quel animal a la plus longue durée de gestation ?", options: ["Éléphant", "Baleine", "Girafe", "Rhinocéros"], correct: 0, explanation: "La gestation de l'éléphant dure environ 22 mois." },
+                { question: "Quel insecte produit le miel ?", options: ["Abeille", "Guêpe", "Fourmi", "Termite"], correct: 0, explanation: "Les abeilles domestiques fabriquent le miel à partir du nectar des fleurs." }
+            ],
+            animaux_2: [
+                { question: "Quel animal est capable de régénérer ses bras ?", options: ["Étoile de mer", "Méduse", "Ver de terre", "Escargot"], correct: 0, explanation: "L'étoile de mer peut régénérer un bras perdu, voire un corps entier à partir d'un bras." },
+                { question: "Quel est le plus grand félin ?", options: ["Lion", "Tigre", "Léopard", "Jaguar"], correct: 1, explanation: "Le tigre de Sibérie est le plus grand félin, pouvant dépasser 300 kg." },
+                { question: "Quel animal peut dormir debout ?", options: ["Cheval", "Vache", "Éléphant", "Girafe"], correct: 0, explanation: "Les chevaux peuvent dormir debout grâce à un système de verrouillage des articulations." },
+                { question: "Quel poisson est considéré comme le plus venimeux ?", options: ["Poisson-pierre", "Poisson-globe", "Requin", "Murène"], correct: 0, explanation: "Le poisson-pierre possède des épines dorsales extrêmement venimeuses." },
+                { question: "Quel oiseau a la plus grande envergure ?", options: ["Albatros", "Condor", "Aigle royal", "Pélican"], correct: 0, explanation: "L'albatros hurleur a la plus grande envergure, pouvant dépasser 3,5 mètres." },
+                { question: "Quel mammifère a la plus longue langue ?", options: ["Fourmilier", "Éléphant", "Girafe", "Okapi"], correct: 0, explanation: "Le fourmilier géant a une langue pouvant mesurer jusqu'à 60 cm." },
+                { question: "Quel animal est traditionnellement associé à la sagesse ?", options: ["Chouette", "Hibou", "Aigle", "Corbeau"], correct: 0, explanation: "La chouette est un symbole de sagesse dans de nombreuses cultures, notamment grecque." },
+                { question: "Quel reptile peut courir sur l'eau ?", options: ["Basilic", "Crocodile", "Iguane", "Gecko"], correct: 0, explanation: "Le basilic (lézard Jésus-Christ) peut courir sur l'eau grâce à ses pattes palmées." },
+                { question: "Quel animal a le sang bleu ?", options: ["Araignée", "Homard", "Ver de terre", "Méduse"], correct: 1, explanation: "Le sang des homards et de nombreux crustacés est bleu grâce à l'hémocyanine." },
+                { question: "Quel est le plus petit mammifère ?", options: ["Musaraigne étrusque", "Chauve-souris", "Souris", "Hamster"], correct: 0, explanation: "La musaraigne étrusque pèse environ 2 grammes et mesure 4 cm." }
+            ],
+            plantes: [
+                { question: "Quelle plante produit le coton ?", options: ["Cotonier", "Lin", "Chanvre", "Jute"], correct: 0, explanation: "Le cotonnier produit des fibres utilisées pour le textile." },
+                { question: "Quel arbre produit les glands ?", options: ["Chêne", "Hêtre", "Châtaignier", "Noyer"], correct: 0, explanation: "Les glands sont les fruits du chêne." },
+                { question: "Quelle plante est carnivore ?", options: ["Drosera", "Tournesol", "Orchidée", "Rose"], correct: 0, explanation: "Le drosera capture des insectes avec ses feuilles collantes." },
+                { question: "Quel fruit pousse sur un cactus ?", options: ["Figue de Barbarie", "Ananas", "Banane", "Mangue"], correct: 0, explanation: "La figue de Barbarie est le fruit du cactus opuntia." },
+                { question: "Quelle plante donne le café ?", options: ["Caféier", "Théier", "Cacaoyer", "Vanillier"], correct: 0, explanation: "Le caféier produit les cerises dont on extrait les grains de café." },
+                { question: "Quel arbre est le plus grand du monde ?", options: ["Séquoia", "Eucalyptus", "Baobab", "Chêne"], correct: 0, explanation: "Les séquoias géants de Californie sont parmi les plus hauts arbres du monde." },
+                { question: "Quelle céréale est principalement utilisée pour faire le pain ?", options: ["Blé", "Riz", "Maïs", "Orge"], correct: 0, explanation: "Le blé est la céréale de base pour la farine du pain." },
+                { question: "Quelle est la plus grande fleur du monde ?", options: ["Rafflesia", "Tournesol", "Lotus", "Magnolia"], correct: 0, explanation: "La rafflesia arnoldii peut mesurer jusqu'à un mètre de diamètre." },
+                { question: "Quelle plante ferme ses feuilles au toucher ?", options: ["Mimosa pudica", "Fougère", "Mousse", "Lichen"], correct: 0, explanation: "Le mimosa pudica (sensitive) replie ses feuilles lorsqu'on les touche." },
+                { question: "Quel arbre produit le latex pour le caoutchouc ?", options: ["Hévéa", "Chêne-liège", "Pin", "Sapin"], correct: 0, explanation: "L'hévéa brasiliensis est la principale source de caoutchouc naturel." }
+            ],
+            records: [
+                { question: "Quel athlète détient le record du monde du 100 mètres ?", options: ["Usain Bolt (9,58 s)", "Tyson Gay", "Asafa Powell", "Justin Gatlin"], correct: 0, explanation: "Usain Bolt a établi le record en 9,58 secondes aux championnats du monde 2009." },
+                { question: "Quel est le plus haut gratte-ciel du monde ?", options: ["Burj Khalifa", "Shanghai Tower", "Abraj Al Bait", "Ping An Finance Centre"], correct: 0, explanation: "Le Burj Khalifa à Dubaï culmine à 828 mètres." },
+                { question: "Quel est le pays le plus peuplé du monde ?", options: ["Chine", "Inde", "États-Unis", "Indonésie"], correct: 1, explanation: "L'Inde est devenue le pays le plus peuplé du monde en 2023." },
+                { question: "Quel est le plus grand désert du monde ?", options: ["Sahara", "Antarctique", "Gobi", "Arabie"], correct: 1, explanation: "L'Antarctique est le plus grand désert (froid) de la planète." },
+                { question: "Qui détient le record du plus grand nombre de médailles d'or olympiques ?", options: ["Michael Phelps", "Mark Spitz", "Usain Bolt", "Carl Lewis"], correct: 0, explanation: "Michael Phelps a remporté 23 médailles d'or olympiques." },
+                { question: "Quel est le plus long pont du monde ?", options: ["Danyang–Kunshan Grand Bridge", "Pont de la Confédération", "Viaduc de Millau", "Golden Gate"], correct: 0, explanation: "Le Danyang–Kunshan Grand Bridge en Chine mesure plus de 164 km." },
+                { question: "Quel animal possède le plus grand cerveau ?", options: ["Cachalot", "Éléphant", "Humain", "Dauphin"], correct: 0, explanation: "Le cachalot a le plus grand cerveau du règne animal." },
+                { question: "Quelle est la vitesse maximale approximative d'un guépard ?", options: ["100-120 km/h", "60-80 km/h", "150 km/h", "40 km/h"], correct: 0, explanation: "Le guépard peut atteindre 110 à 120 km/h en pointe." },
+                { question: "Quel pays possède le plus grand nombre de fuseaux horaires ?", options: ["France", "Russie", "États-Unis", "Chine"], correct: 0, explanation: "Grâce à ses territoires d'outre-mer, la France en possède 12." },
+                { question: "Quel est l'un des plus vieux arbres connus ?", options: ["Pin Bristlecone", "Séquoia", "Olivier", "Baobab"], correct: 0, explanation: "Certains pins Bristlecone de Californie ont plus de 4 800 ans." }
+            ],
+            capitales: [
+                { question: "Quelle est la capitale de l'Australie ?", options: ["Sydney", "Melbourne", "Canberra", "Perth"], correct: 2, explanation: "Canberra a été choisie comme capitale pour éviter le rivalité entre Sydney et Melbourne." },
+                { question: "Quelle est la capitale du Canada ?", options: ["Toronto", "Montréal", "Ottawa", "Vancouver"], correct: 2, explanation: "Ottawa est la capitale politique du Canada depuis 1857." },
+                { question: "Quelle est la capitale de la Turquie ?", options: ["Istanbul", "Ankara", "Izmir", "Antalya"], correct: 1, explanation: "Ankara est la capitale depuis 1923, Istanbul restant la plus grande ville." },
+                { question: "Quelle est la capitale du Brésil ?", options: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"], correct: 2, explanation: "Brasília a été construite dans les années 1960 pour devenir la capitale." },
+                { question: "Quelle est la capitale du Maroc ?", options: ["Casablanca", "Rabat", "Marrakech", "Fès"], correct: 1, explanation: "Rabat est la capitale administrative, Casablanca le principal centre économique." },
+                { question: "Quelle est la capitale de la Suisse ?", options: ["Zurich", "Genève", "Berne", "Bâle"], correct: 2, explanation: "Berne est le siège du gouvernement fédéral suisse." },
+                { question: "Quelle est la capitale administrative de l'Afrique du Sud ?", options: ["Johannesburg", "Le Cap", "Pretoria", "Durban"], correct: 2, explanation: "Pretoria est la capitale administrative, Le Cap législative, Bloemfontein judiciaire." },
+                { question: "Quelle est la capitale de la Nouvelle-Zélande ?", options: ["Auckland", "Wellington", "Christchurch", "Hamilton"], correct: 1, explanation: "Wellington est la capitale politique de la Nouvelle-Zélande." },
+                { question: "Quelle est la capitale du Nigeria ?", options: ["Lagos", "Abuja", "Kano", "Ibadan"], correct: 1, explanation: "Abuja a remplacé Lagos comme capitale en 1991." },
+                { question: "Quelle est la capitale de la Corée du Sud ?", options: ["Busan", "Séoul", "Incheon", "Daegu"], correct: 1, explanation: "Séoul est la capitale et la plus grande ville de Corée du Sud." }
+            ],
             musique: [
                 { question: "Quel chanteur français ou chanteuse française est célèbre pour 'L'hymne à l'amour' ?", options: ["Charles Aznavour", "Sylvie Vartan", "Édith Piaf", "Johnny Hallyday"], correct: 2 },
                 { question: "Quel groupe a chanté 'Bohemian Rhapsody' ?", options: ["The Beatles", "Queen", "Pink Floyd", "The Rolling Stones"], correct: 1 },
@@ -549,14 +709,12 @@
     
     navigator.clipboard.writeText(promptText).then(() => {
         showCustomAlert(
-            "Le prompt a été copié dans votre presse-papier, prêt à être collé dans votre IA préférée !<br>Par défaut, vous allez être redirigé vers Gemini.",
-            () => window.open("https://gemini.google.com/app", '_blank')
+            "Le prompt a été copié dans votre presse-papier.<br>Vous pouvez le coller dans ChatGPT, Claude ou Grok."
         );
     }).catch(err => {
         console.error("Erreur lors de la copie : ", err);
         showCustomAlert(
-            "Voici votre prompt à copier manuellement :<br><br>" + promptText,
-            () => window.open("https://gemini.google.com/app", '_blank')
+            "Voici votre prompt à copier manuellement :<br><br>" + promptText
         );
     });
     
@@ -623,12 +781,12 @@ function fermerCustomAlert() {
             if (selectedOption === question.correct) {
                 score++;
                 options[selectedOption].classList.add('correct');
-                feedback.textContent = "Bravo ! C'est la bonne réponse.";
+                feedback.innerHTML = "Bravo ! C'est la bonne réponse." + (question.explanation ? "<br><br><em>" + question.explanation + "</em>" : "");
                 feedback.className = "feedback correct";
             } else {
                 options[selectedOption].classList.add('incorrect');
                 options[question.correct].classList.add('correct');
-                feedback.textContent = `Dommage ! La bonne réponse était : ${question.options[question.correct]}`;
+                feedback.innerHTML = `Dommage ! La bonne réponse était : ${question.options[question.correct]}` + (question.explanation ? "<br><br><em>" + question.explanation + "</em>" : "");
                 feedback.className = "feedback incorrect";
             }
             feedback.style.display = 'block';
